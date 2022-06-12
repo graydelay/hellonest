@@ -10,7 +10,7 @@ import { CatsModule } from './cats/cats.module';
 import { LoggerMiddleware } from './logger.middleware';
 
 @Module({
-  imports: [CatsModule],
+  imports: [CatsModule], // Provider를 가지고 있는 다른 모듈 가져오기
   controllers: [AppController],
   providers: [AppService],
 })
