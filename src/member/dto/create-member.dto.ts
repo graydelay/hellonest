@@ -1,5 +1,9 @@
+import { IsString } from 'class-validator';
+
 export class CreateMemberDto {
-  id: number;
-  name: string;
-  grade: string;
+  @IsString()
+  readonly name: string;
+
+  @IsString()
+  readonly grade: string;
 }

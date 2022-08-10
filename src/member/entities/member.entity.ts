@@ -1,4 +1,4 @@
-export interface Member {
+export class Member {
   id: number;
   name: string;
   grade: string;
