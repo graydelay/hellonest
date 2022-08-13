@@ -35,7 +35,7 @@ export class MembersService {
    * 회원를 생성한다.
    *
    * @param {Member} member
-   * @returns Promise<Member>
+   * @returns null
    */
   join(memberData: CreateMemberDto) {
     this.members.push({
