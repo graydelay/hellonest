@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { Member } from 'src/member/entities/member.entity';
+import { Member } from '../member/entities/member.entity';
+import { DiscountService } from './discount.service';
 
 @Injectable()
-export class RateDiscountService {
+export class RateDiscountService implements DiscountService {
   readonly discountPercent = 10; // 할인율 10%
 
   /**

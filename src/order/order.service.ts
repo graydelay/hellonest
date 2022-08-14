@@ -1,15 +1,16 @@
-import { Injectable } from '@nestjs/common';
-import { RateDiscountService } from '../ratediscount/ratediscount.service';
+import { Inject, Injectable } from '@nestjs/common';
 import { Member } from '../member/entities/member.entity';
 import { MembersService } from '../member/members.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { Order } from './entities/order.entity';
+import { DiscountService } from '../discount/discount.service';
 
 @Injectable()
 export class OrderService {
   constructor(
     private memberService: MembersService,
-    private discountService: RateDiscountService,
+    // provide에서 설정한 string 값을 @Inject에 적어준다
+    @Inject('DiscountService') private discountService: DiscountService,
   ) {} // DI(Dependency Injection)
 
   private order: Order[] = [];
